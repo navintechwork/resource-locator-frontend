@@ -1,0 +1,60 @@
+<div class="container">
+
+    <!-- <form action="#"> -->
+
+        <div class="row">
+
+            <div class="col">
+                <h3 class="title">Add Resource Category</h3>
+                <div class="input-data">
+                    <div class="inputBox">
+                        <label for="name">Resource Category</label>
+                        <input type="text" id="name" placeholder="Enter Resource Category"  [(ngModel)]="requestCategory" required>
+                    </div>
+
+                    
+                </div>
+                <input type="submit" value="Add Resource Category" class="submit_btn" (click)="addResourceCategory()">
+                <h4>Available Resource Category</h4>
+
+                <div class="available-in-system">
+                    <div *ngFor="let item of resourceCategoryList">
+                        <span>{{item.resource_category}}</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <h3 class="title">Add Resource Name</h3>
+                <div class="input-data">
+                    <div class="inputBox">
+                        <label for="">Select Resouce Category</label>
+                        <select name="" id="" [(ngModel)]="selectedResourceCategory" (change)="onSelectionChange($event)">
+                            <option [value]="item.resource_category" *ngFor="let item of resourceCategoryList">{{item.resource_category}}</option>
+                        </select>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="name">Resource Name</label>
+                        <input type="text" id="name" placeholder="Enter Resource Name" [(ngModel)]="requestName" required>
+                    </div>
+
+                    
+                </div>
+                <input type="submit" value="Add Resource Name" class="submit_btn" (click)="addResourceName()">
+                <h4>Available Resource Name</h4>
+
+                <div class="available-in-system">
+                    <div *ngFor="let item of filteredResourceNameList">
+                        <span>{{item.resource_name}}</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <input type="submit" value="Proceed to Checkout" class="submit_btn"> -->
+    <!-- </form> -->
+
+</div>
